@@ -1,0 +1,4 @@
+interface:
+  display_name: "CodeFlow"
+  short_description: "Create interactive diagrams for any project"
+  default_prompt: "Use $codeflow to map this project's runtime architecture as a validated interactive HTML diagram."

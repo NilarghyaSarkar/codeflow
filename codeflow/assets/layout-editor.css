@@ -1,0 +1,54 @@
+.archify-layout-launch {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 11;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--toolbar-border);
+  border-radius: 0.7rem;
+  background: var(--toolbar-menu-bg);
+  color: var(--toolbar-text);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.archify-layout-launch:focus-visible,
+.archify-layout-dialog button:focus-visible { outline: 2px solid var(--frontend-stroke); outline-offset: 3px; }
+html[data-embed="true"] .archify-layout-launch { display: none; }
+.archify-layout-dialog {
+  inset: 0;
+  width: 96vw;
+  height: 94dvh;
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  border-radius: 1.2rem;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.4);
+}
+.archify-layout-dialog[open] { display: flex; flex-direction: column; }
+.archify-layout-dialog::backdrop { background: rgba(6, 10, 24, 0.7); }
+.archify-layout-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.25rem; border-bottom: 1px solid var(--panel-border); }
+.archify-layout-head h2 { margin: 0; font-size: 1rem; }
+.archify-layout-head p { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.8rem; }
+.archify-layout-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.archify-layout-dialog button { min-height: 2.5rem; padding: 0.5rem 0.8rem; border: 1px solid var(--toolbar-border); border-radius: 0.65rem; color: var(--toolbar-text); background: var(--toolbar-menu-bg); font: inherit; font-size: 0.8rem; cursor: pointer; }
+.archify-layout-dialog button:hover { background: var(--toolbar-hover); }
+.archify-layout-dialog button:disabled { opacity: 0.45; cursor: default; }
+.archify-layout-dialog #layout-save-json { background: var(--studio-action, var(--frontend-stroke)); color: var(--studio-action-text, var(--bg)); }
+.archify-layout-stage { flex: 1; min-height: 0; overflow: hidden; background: var(--panel); }
+#archify-layout-canvas { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: none; transform: none; touch-action: none; user-select: none; }
+#archify-layout-canvas [data-node-id] { cursor: grab; }
+#archify-layout-canvas [data-layout-selected] > rect:not(.c-mask) { stroke-width: 2.5; }
+#archify-layout-canvas[data-layout-dragging] [data-node-id] { cursor: grabbing; }
+#archify-layout-canvas [data-animate], #archify-layout-canvas [data-detail], #archify-layout-canvas [data-detail-anchor] { animation: none !important; transition: none !important; opacity: 1 !important; }
+#archify-layout-canvas [data-layout-blocked] { stroke-dasharray: 4 3; }
+.archify-layout-status { padding: 0.7rem 1.25rem; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--panel-border); }
+@media print { .archify-layout-launch, .archify-layout-dialog { display: none !important; } }
+@media (max-width: 767px) { .archify-layout-dialog { width: 100vw; height: 100dvh; border-radius: 0; } .archify-layout-head { padding: 0.65rem; gap: 0.5rem; } .archify-layout-actions { gap: 0.25rem; } }
