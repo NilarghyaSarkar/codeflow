@@ -13,7 +13,7 @@ Use $codeflow to explain this project's architecture.
 - Draggable architecture boxes: connections, labels, and surrounding boundaries adjust automatically.
 - Undo, reset, saved layout JSON, and draft SVG downloads.
 - Search, focus, tracing, presentation, and the bundled viewer's export controls.
-- Code-backed diagrams with repository evidence, or diagrams from descriptions and Mermaid.
+- Detailed code-backed diagrams with request paths, failure branches, source links, and a companion debugging guide. Also accepts descriptions and Mermaid.
 
 ## Requirements
 
@@ -57,12 +57,18 @@ Open the project you want to understand and ask, for example:
 
 ```text
 Use $codeflow to show how a request moves through this project.
+Use $codeflow to explain checkout in detail so I can debug failed payments.
+Use $codeflow for a quick architecture overview, diagram only.
 Use $codeflow to diagram checkout as a sequence, including cache misses.
 Use $codeflow to turn this Mermaid diagram into interactive HTML.
 Use $codeflow to explain the database schema as an entity-relationship diagram.
 ```
 
 The skill creates a new request folder under `.archify/` in the current project, containing the candidate JSON, HTML diagram, and verification receipts. Open the HTML to explore the result.
+
+Repository explanations default to enough implementation detail to follow a real operation: entry points, handler/service calls, data reads and writes, and material conditions or failures supported by the inspected source. Native source links and supporting cards help you navigate the code. A companion `debugging.md` adds the execution walkthrough, investigation points, relevant configuration, and facts that still need runtime evidence. A complex mechanism can receive a focused Sequence or Workflow diagram.
+
+Ask for a quick overview or diagram-only output to keep it concise. Existing diagrams need re-authoring to receive richer analysis; moving boxes only changes their layout.
 
 ### Rearrange architecture boxes
 

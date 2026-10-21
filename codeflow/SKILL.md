@@ -1,6 +1,6 @@
 ---
 name: codeflow
-description: "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, entity-relationship, class/interface, tree, timeline, and execution waterfall diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional motion, and image/SVG/WebM export. Accept plain-language requirements or Mermaid; inspect repository evidence for code-backed diagrams. Use when visualizing infrastructure, cloud/security networks, API calls, data pipelines, ETL/ELT, state machines, database schemas, class contracts, module hierarchies, incident/release histories, or request and agent-run timings. Also use for everyday subjects with steps, parts, relationships, or states: leave and travel plans, applications and approvals, renting conversations, money or document flows, and order progress. Not for numeric charts or dashboards."
+description: "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, entity-relationship, class/interface, tree, timeline, and execution waterfall diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional motion, and image/SVG/WebM export. Accept plain-language requirements or Mermaid; inspect repository evidence for detailed code diagrams, request paths, failure handling, and debugging notes. Use when visualizing infrastructure, cloud/security networks, API calls, data pipelines, ETL/ELT, state machines, database schemas, class contracts, module hierarchies, incident/release histories, or request and agent-run timings. Also use for everyday subjects with steps, parts, relationships, or states: leave and travel plans, applications and approvals, renting conversations, money or document flows, and order progress. Not for numeric charts or dashboards."
 license: MIT
 metadata:
   version: "3.1"
@@ -14,6 +14,16 @@ Create an interactive HTML diagram from typed JSON.
 Run commands from your working directory. Unless the user names another location, give each new diagram request its own folder `.archify/<type>-<slug>-<YYYYMMDD-HHMMSS>/` there (local time, chosen once when the request starts): keep `candidate.json` and `<slug>.html` in it, set `meta.output` to that HTML path relative to the working directory, and reuse the folder for every repair rerun. A later request gets a new folder, so earlier versions stay intact. Replace `bin/codeflow.mjs` in the commands below with the installed package's absolute path, or its path relative to your working directory; input and output paths resolve from that working directory.
 
 For a real codebase, read [Repository authoring](references/repository-authoring.md) while tracing the requested behavior. A system description uses the steps below; an existing JSON uses the handoff path.
+
+<!-- OPENCODE:DEBUG_DETAIL_START -->
+## Repository diagrams for debugging
+
+For newly authored repository explanations, default to implementation detail that helps the reader follow and debug a real path. Read [Debugging authoring](references/debugging-authoring.md) alongside Repository authoring before inspecting that path. This refines the overview default: retain the architecture, then show the relevant entry points, handler/service operations, actual data reads/writes, and material conditions, failures, retries, or asynchronous handoffs supported by the inspected code. Keep callable or endpoint names recognizable and give each meaningful relationship a concise action or condition. Use native source links and readable supporting cards; do not turn every helper into a box.
+
+Include a companion `debugging.md` in the request folder with the source-backed walkthrough, relevant investigation points, and unresolved evidence. Link it with the HTML in the final reply. Add a focused Sequence or Workflow diagram only when the requested mechanism cannot stay readable in the primary diagram; use supported fields and finalize each diagram normally. Debugging detail is the ordinary repository default, not a new CLI flag or schema field.
+
+Honor explicit requests for a quick overview, diagram-only output, a fixed diagram type, or a frozen-candidate handoff. For a quick overview or diagram-only request, omit the companion guide and extra diagrams unless requested. Do not expand unrelated everyday diagrams into software debugging reports. This section takes precedence over generic overview and single-link output defaults for the repository requests it covers.
+<!-- OPENCODE:DEBUG_DETAIL_END -->
 
 ## Existing candidate handoff
 

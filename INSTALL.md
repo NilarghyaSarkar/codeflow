@@ -3,6 +3,10 @@
 CodeFlow creates interactive architecture and other diagrams from project code,
 plain-language descriptions, or Mermaid. Architecture diagrams include draggable
 boxes, automatic connection routing, undo/reset, and layout JSON and SVG exports.
+Repository diagrams default to detailed request/failure paths and source links,
+with a companion debugging guide explaining the inspected code and useful
+investigation points. Ask for a quick overview or diagram-only output when you
+want less detail.
 
 ## Requirements
 
@@ -32,6 +36,15 @@ boxes, automatic connection routing, undo/reset, and layout JSON and SVG exports
    ```
 
    If the skill has not appeared, restart Codex and try again.
+
+For a specific debugging task, try:
+
+```text
+Use $codeflow to explain checkout in detail so I can debug failed payments.
+```
+
+Open the generated HTML and companion `debugging.md`. They describe inspected
+source behavior; confirming the cause of a live failure requires runtime evidence.
 
 You can run the installer from any folder by supplying its full path:
 

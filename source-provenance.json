@@ -168,7 +168,8 @@
     "assets/layout-editor.css",
     "assets/layout-routing.js",
     "assets/layout-editor.js",
-    "bin/codeflow.mjs"
+    "bin/codeflow.mjs",
+    "references/debugging-authoring.md"
   ],
   "customizations": {
     "assets/template.html": {
@@ -202,8 +203,8 @@
       "endMarker": "        <!-- OPENCODE:LAYOUT_DATA_END -->\n"
     },
     "SKILL.md": {
-      "sha256": "f72fe74b6d35437bd8cd359ce35155404dd1a198a0832f4cd110d03acc127b0e",
-      "scope": "CodeFlow skill identity and CLI alias; additive architecture placement guidance. Upstream instructions are recoverable by reversing recorded replacements and removing the guidance block.",
+      "sha256": "99de0de1c5d5931c23905ebad3af60f0feb2ca799624b29cdd6d0431551bf42e",
+      "scope": "CodeFlow identity, detailed repository/debugging authoring, and additive architecture placement guidance; upstream instructions are recoverable by reversing recorded replacements and removing bounded guidance blocks.",
       "startMarker": "<!-- OPENCODE:LAYOUT_GUIDANCE_START -->\n",
       "endMarker": "<!-- OPENCODE:LAYOUT_GUIDANCE_END -->\n",
       "replacements": [
@@ -221,6 +222,17 @@
           "upstream": "bin/archify.mjs",
           "local": "bin/codeflow.mjs",
           "count": 6
+        },
+        {
+          "upstream": "inspect repository evidence for code-backed diagrams.",
+          "local": "inspect repository evidence for detailed code diagrams, request paths, failure handling, and debugging notes.",
+          "count": 1
+        }
+      ],
+      "blocks": [
+        {
+          "startMarker": "<!-- OPENCODE:DEBUG_DETAIL_START -->\n",
+          "endMarker": "<!-- OPENCODE:DEBUG_DETAIL_END -->\n\n"
         }
       ]
     }
