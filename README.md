@@ -23,7 +23,7 @@ Use $codeflow to explain this codebase's architecture and all API sequences.
 
 ## Install from the ZIP
 
-1. [Download codeflow-skill.zip](downloads/codeflow-skill.zip?raw=true).
+1. [Download codeflow-skill.zip](downloads/codeflow-skill.zip?raw=true).     (Left click and Open in new TAB)
 2. Extract it and open the extracted `codeflow-skill` folder in a terminal.
 3. Run:
 
