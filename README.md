@@ -3,7 +3,7 @@
 A diagramming skill for Codex. Open a project, ask a question, and get an interactive HTML diagram you can explore, rearrange, export, and share.
 
 ```text
-Use $codeflow to explain this project's architecture.
+Use $codeflow to explain this codebase's architecture and all API sequences.
 ```
 
 ## Features
@@ -13,7 +13,7 @@ Use $codeflow to explain this project's architecture.
 - Draggable architecture boxes: connections, labels, and surrounding boundaries adjust automatically.
 - Undo, reset, saved layout JSON, and draft SVG downloads.
 - Search, focus, tracing, presentation, and the bundled viewer's export controls.
-- Detailed code-backed diagrams with request paths, failure branches, source links, and a companion debugging guide. Also accepts descriptions and Mermaid.
+- Repository Architecture maps and Sequence diagrams covering all discovered APIs, with source links and coverage cards. No debugging document. Also accepts descriptions and Mermaid.
 
 ## Requirements
 
@@ -34,7 +34,7 @@ Use $codeflow to explain this project's architecture.
 4. In any existing or new project, start a new turn in Codex and ask:
 
    ```text
-   Use $codeflow to explain this project's architecture.
+   Use $codeflow to explain this codebase's architecture and all API sequences.
    ```
 
 If CodeFlow does not appear, restart Codex. The installer copies the complete skill to `~/.agents/skills/codeflow`, so the extracted download can be deleted afterward. This is Codex's [user skill location](https://learn.chatgpt.com/docs/build-skills).
@@ -57,8 +57,8 @@ Open the project you want to understand and ask, for example:
 
 ```text
 Use $codeflow to show how a request moves through this project.
-Use $codeflow to explain checkout in detail so I can debug failed payments.
-Use $codeflow for a quick architecture overview, diagram only.
+Use $codeflow to generate the architecture and sequence diagrams for all APIs in this codebase.
+Use $codeflow to show only the architecture diagram.
 Use $codeflow to diagram checkout as a sequence, including cache misses.
 Use $codeflow to turn this Mermaid diagram into interactive HTML.
 Use $codeflow to explain the database schema as an entity-relationship diagram.
@@ -66,9 +66,9 @@ Use $codeflow to explain the database schema as an entity-relationship diagram.
 
 The skill creates a new request folder under `.archify/` in the current project, containing the candidate JSON, HTML diagram, and verification receipts. Open the HTML to explore the result.
 
-Repository explanations default to enough implementation detail to follow a real operation: entry points, handler/service calls, data reads and writes, and material conditions or failures supported by the inspected source. Native source links and supporting cards help you navigate the code. A companion `debugging.md` adds the execution walkthrough, investigation points, relevant configuration, and facts that still need runtime evidence. A complex mechanism can receive a focused Sequence or Workflow diagram.
+Repository explanations produce an Architecture map and Sequence coverage of all discovered APIs across the codebase. CodeFlow resolves mounted prefixes, HTTP methods, conditional registration, and other exposed API operations, then traces each API through its handler, service calls, I/O, and response. Large API surfaces are split into readable endpoint or API-area Sequences; independent requests remain separate scenarios. Source links, API coverage, and material gaps stay in the diagrams and their cards.
 
-Ask for a quick overview or diagram-only output to keep it concise. Existing diagrams need re-authoring to receive richer analysis; moving boxes only changes their layout.
+No debugging document or separate prose report is generated. Candidate JSON and verification receipts remain supporting files. Explicit single-diagram or narrower requests control the scope. Existing diagrams need re-authoring for the revised output; moving boxes only changes their layout.
 
 ### Rearrange architecture boxes
 

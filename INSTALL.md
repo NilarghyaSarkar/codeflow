@@ -3,10 +3,10 @@
 CodeFlow creates interactive architecture and other diagrams from project code,
 plain-language descriptions, or Mermaid. Architecture diagrams include draggable
 boxes, automatic connection routing, undo/reset, and layout JSON and SVG exports.
-Repository diagrams default to detailed request/failure paths and source links,
-with a companion debugging guide explaining the inspected code and useful
-investigation points. Ask for a quick overview or diagram-only output when you
-want less detail.
+Repository explanations produce an Architecture map plus Sequence diagrams for
+all discovered APIs. Large API surfaces are grouped into readable Sequences,
+with source links and coverage details inside the diagrams. No debugging document
+or separate prose report is generated.
 
 ## Requirements
 
@@ -32,19 +32,20 @@ want less detail.
 3. On your next turn in Codex, open any project and ask:
 
    ```text
-   Use $codeflow to explain this project's architecture.
+   Use $codeflow to explain this codebase's architecture and all API sequences.
    ```
 
    If the skill has not appeared, restart Codex and try again.
 
-For a specific debugging task, try:
+To request the full project output explicitly:
 
 ```text
-Use $codeflow to explain checkout in detail so I can debug failed payments.
+Use $codeflow to generate the architecture and sequence diagrams for all APIs in this codebase.
 ```
 
-Open the generated HTML and companion `debugging.md`. They describe inspected
-source behavior; confirming the cause of a live failure requires runtime evidence.
+Open the Architecture HTML and API Sequence HTML outputs. An explicit request for
+only Architecture or a named API narrows the output. Static source inspection
+establishes possible code paths, not that a live request followed them.
 
 You can run the installer from any folder by supplying its full path:
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "CodeFlow"
-  short_description: "Create detailed diagrams for debugging projects"
-  default_prompt: "Use $codeflow to explain this project's architecture in detail, including request and failure paths, source locations, and debugging notes."
+  short_description: "Map project architecture and every API sequence"
+  default_prompt: "Use $codeflow to generate this codebase's architecture diagram and sequence diagrams covering all APIs, without a debugging document."

@@ -1,6 +1,6 @@
 ---
 name: codeflow
-description: "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, entity-relationship, class/interface, tree, timeline, and execution waterfall diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional motion, and image/SVG/WebM export. Accept plain-language requirements or Mermaid; inspect repository evidence for detailed code diagrams, request paths, failure handling, and debugging notes. Use when visualizing infrastructure, cloud/security networks, API calls, data pipelines, ETL/ELT, state machines, database schemas, class contracts, module hierarchies, incident/release histories, or request and agent-run timings. Also use for everyday subjects with steps, parts, relationships, or states: leave and travel plans, applications and approvals, renting conversations, money or document flows, and order progress. Not for numeric charts or dashboards."
+description: "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, entity-relationship, class/interface, tree, timeline, and execution waterfall diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional motion, and image/SVG/WebM export. Accept plain-language requirements or Mermaid; inspect repository evidence for architecture maps and complete API sequence coverage. Use when visualizing infrastructure, cloud/security networks, API calls, data pipelines, ETL/ELT, state machines, database schemas, class contracts, module hierarchies, incident/release histories, or request and agent-run timings. Also use for everyday subjects with steps, parts, relationships, or states: leave and travel plans, applications and approvals, renting conversations, money or document flows, and order progress. Not for numeric charts or dashboards."
 license: MIT
 metadata:
   version: "3.1"
@@ -15,15 +15,15 @@ Run commands from your working directory. Unless the user names another location
 
 For a real codebase, read [Repository authoring](references/repository-authoring.md) while tracing the requested behavior. A system description uses the steps below; an existing JSON uses the handoff path.
 
-<!-- OPENCODE:DEBUG_DETAIL_START -->
-## Repository diagrams for debugging
+<!-- OPENCODE:REPOSITORY_DIAGRAMS_START -->
+## Repository output: Architecture and API Sequences
 
-For newly authored repository explanations, default to implementation detail that helps the reader follow and debug a real path. Read [Debugging authoring](references/debugging-authoring.md) alongside Repository authoring before inspecting that path. This refines the overview default: retain the architecture, then show the relevant entry points, handler/service operations, actual data reads/writes, and material conditions, failures, retries, or asynchronous handoffs supported by the inspected code. Keep callable or endpoint names recognizable and give each meaningful relationship a concise action or condition. Use native source links and readable supporting cards; do not turn every helper into a box.
+For newly authored repository explanations, produce two diagram deliverables: an Architecture map of the codebase and Sequence coverage of all its APIs. Read [Repository diagram coverage](references/repository-diagrams.md) alongside Repository authoring before inspecting the project. Discover every first-party API registration across services, including mounted prefixes, methods, and conditional routes; trace each endpoint from its actual entry through handlers, services, I/O, and response. Keep source-backed conditions and failures in the diagrams and their cards.
 
-Include a companion `debugging.md` in the request folder with the source-backed walkthrough, relevant investigation points, and unresolved evidence. Link it with the HTML in the final reply. Add a focused Sequence or Workflow diagram only when the requested mechanism cannot stay readable in the primary diagram; use supported fields and finalize each diagram normally. Debugging detail is the ordinary repository default, not a new CLI flag or schema field.
+Generate only Architecture and Sequence diagrams for this repository workflow. Do not create `debugging.md`, a debugging document, an API report, or another prose deliverable. Candidate JSON and normal verification receipts remain required supporting files. API coverage belongs in the Sequence diagrams and their cards. Use one Sequence when it remains readable; otherwise split into clearly named endpoint or API-area Sequences without dropping routes. Treat independent endpoints as separate scenarios, not one execution. Finalize every diagram normally and link the Architecture plus all Sequence HTML outputs in the final reply.
 
-Honor explicit requests for a quick overview, diagram-only output, a fixed diagram type, or a frozen-candidate handoff. For a quick overview or diagram-only request, omit the companion guide and extra diagrams unless requested. Do not expand unrelated everyday diagrams into software debugging reports. This section takes precedence over generic overview and single-link output defaults for the repository requests it covers.
-<!-- OPENCODE:DEBUG_DETAIL_END -->
+An explicit request for only one diagram, a named route/subsystem, another mode, or a frozen-candidate handoff still controls that request. A generic request to explain or diagram the project gets both deliverables and the full discovered API scope; do not silently limit it to one example request. A repository with no APIs uses a source-backed main execution Sequence and states that no APIs were found. This section takes precedence over generic single-type, narrow-slice, overview, and single-link defaults for the repository requests it covers; unrelated descriptions and Mermaid retain their normal type routing.
+<!-- OPENCODE:REPOSITORY_DIAGRAMS_END -->
 
 ## Existing candidate handoff
 

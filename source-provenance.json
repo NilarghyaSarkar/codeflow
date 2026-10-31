@@ -169,7 +169,7 @@
     "assets/layout-routing.js",
     "assets/layout-editor.js",
     "bin/codeflow.mjs",
-    "references/debugging-authoring.md"
+    "references/repository-diagrams.md"
   ],
   "customizations": {
     "assets/template.html": {
@@ -203,8 +203,8 @@
       "endMarker": "        <!-- OPENCODE:LAYOUT_DATA_END -->\n"
     },
     "SKILL.md": {
-      "sha256": "99de0de1c5d5931c23905ebad3af60f0feb2ca799624b29cdd6d0431551bf42e",
-      "scope": "CodeFlow identity, detailed repository/debugging authoring, and additive architecture placement guidance; upstream instructions are recoverable by reversing recorded replacements and removing bounded guidance blocks.",
+      "sha256": "4420933761fe5376051b281545f56551bab8b2b02bbd69b53552e68563332e25",
+      "scope": "CodeFlow identity, repository Architecture and complete API Sequence output, and additive architecture placement guidance; upstream instructions are recoverable by reversing recorded replacements and removing bounded guidance blocks.",
       "startMarker": "<!-- OPENCODE:LAYOUT_GUIDANCE_START -->\n",
       "endMarker": "<!-- OPENCODE:LAYOUT_GUIDANCE_END -->\n",
       "replacements": [
@@ -225,14 +225,14 @@
         },
         {
           "upstream": "inspect repository evidence for code-backed diagrams.",
-          "local": "inspect repository evidence for detailed code diagrams, request paths, failure handling, and debugging notes.",
+          "local": "inspect repository evidence for architecture maps and complete API sequence coverage.",
           "count": 1
         }
       ],
       "blocks": [
         {
-          "startMarker": "<!-- OPENCODE:DEBUG_DETAIL_START -->\n",
-          "endMarker": "<!-- OPENCODE:DEBUG_DETAIL_END -->\n\n"
+          "startMarker": "<!-- OPENCODE:REPOSITORY_DIAGRAMS_START -->\n",
+          "endMarker": "<!-- OPENCODE:REPOSITORY_DIAGRAMS_END -->\n\n"
         }
       ]
     }
